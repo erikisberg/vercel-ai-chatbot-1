@@ -115,14 +115,14 @@ export function LoginForm({
               <>
                 Don&apos;t have an account?{' '}
                 <Link href="/sign-up" className="font-medium">
-                  Sign Up
+                  Skapa konto
                 </Link>
               </>
             ) : (
               <>
-                Already have an account?{' '}
+                Har du redan ett konto?{' '}
                 <Link href="/sign-in" className="font-medium">
-                  Sign In
+                  Logga in
                 </Link>
               </>
             )}

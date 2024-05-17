@@ -57,10 +57,10 @@ export function PromptForm({
               )}
             >
               <IconPlus />
-              <span className="sr-only">New Chat</span>
+              <span className="sr-only">Ny Chat</span>
             </Link>
           </TooltipTrigger>
-          <TooltipContent>New Chat</TooltipContent>
+          <TooltipContent>Ny Chat</TooltipContent>
         </Tooltip>
         <Textarea
           ref={inputRef}
@@ -82,10 +82,10 @@ export function PromptForm({
                 disabled={isLoading || input === ''}
               >
                 <IconArrowElbow />
-                <span className="sr-only">Send message</span>
+                <span className="sr-only">Skicka meddelande</span>
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Send message</TooltipContent>
+            <TooltipContent>Skicka meddelande</TooltipContent>
           </Tooltip>
         </div>
       </div>

@@ -90,10 +90,10 @@ export function SidebarActions({
               onClick={() => setShareDialogOpen(true)}
             >
               <IconShare />
-              <span className="sr-only">Share</span>
+              <span className="sr-only">Dela</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Share chat</TooltipContent>
+          <TooltipContent>Dela chat</TooltipContent>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -104,24 +104,24 @@ export function SidebarActions({
               onClick={() => setDeleteDialogOpen(true)}
             >
               <IconTrash />
-              <span className="sr-only">Delete</span>
+              <span className="sr-only">Radera</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Delete chat</TooltipContent>
+          <TooltipContent>Radera chat</TooltipContent>
         </Tooltip>
       </div>
       <Dialog open={shareDialogOpen} onOpenChange={setShareDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Share link to chat</DialogTitle>
+            <DialogTitle>Dela länk till chatt</DialogTitle>
             <DialogDescription>
-              Anyone with the URL will be able to view the shared chat.
+              Vem som helst som har länken kommer kunna nå chatten.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-1 rounded-md border p-4 text-sm">
             <div className="font-medium">{chat.title}</div>
             <div className="text-muted-foreground">
-              {formatDate(chat.createdAt)} · {chat.messages.length} messages
+              {formatDate(chat.createdAt)} · {chat.messages.length} meddelanden
             </div>
           </div>
           <DialogFooter className="items-center">
@@ -174,7 +174,7 @@ export function SidebarActions({
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogTitle>Är du helt säker?</AlertDialogTitle>
             <AlertDialogDescription>
               This will permanently delete your chat message and remove your
               data from our servers.
