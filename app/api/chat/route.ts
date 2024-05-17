@@ -35,9 +35,15 @@ export async function POST(req: Request) {
     configuration.apiKey = previewToken
   }
 
+  // Add system message
+  const systemMessage = {
+    role: 'system',
+    content: 'Du är en AI-handledare. Hjälp studenter genom att guida dem till svaren genom resonemang och ledtrådar snarare än att ge direkta svar. Eleverna kommer vara mellan 14-18 år och kan ha olika nivåer av förkunskaper. Tänk på att vara pedagogisk och hjälpsam. Hallucinera inga svar. Maxlängd på svaren bör ej vara mer än 200 tecken åt gången.'
+  }
+
   const res = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
-    messages,
+    model: 'gpt-4o',
+    messages: [systemMessage, ...messages], // Include system message
     temperature: 0.7,
     stream: true
   })
