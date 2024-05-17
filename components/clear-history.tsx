@@ -33,15 +33,15 @@ export function ClearHistory({ clearChats }: ClearHistoryProps) {
       <AlertDialogTrigger asChild>
         <Button variant="ghost" disabled={isPending}>
           {isPending && <IconSpinner className="mr-2" />}
-          Clear history
+          Rensa historia
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>Är du verkligen säker?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete your chat history and remove your data
-            from our servers.
+          Detta kommer permanent att radera din chatthistorik och ta bort dina data
+          från våra servrar.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -64,7 +64,7 @@ export function ClearHistory({ clearChats }: ClearHistoryProps) {
             }}
           >
             {isPending && <IconSpinner className="mr-2 animate-spin" />}
-            Delete
+            Radera
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
