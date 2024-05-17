@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
@@ -20,19 +19,9 @@ import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { cookies } from 'next/headers'
 
-export function Header() {
-  const [session, setSession] = useState(null);
-
-  useEffect(() => {
-    const fetchSession = async () => {
-      const cookieStore = cookies();
-      const sessionData = await auth({ cookieStore });
-      setSession(sessionData);
-    };
-
-    fetchSession();
-  }, []);
-
+export async function Header() {
+  const cookieStore = cookies()
+  const session = await auth({ cookieStore })
   return (
     <header className="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center justify-between border-b bg-gradient-to-b from-background/10 via-background/50 to-background/80 px-4 backdrop-blur-xl">
       <div className="flex items-center">
@@ -63,6 +52,26 @@ export function Header() {
             </Button>
           )}
         </div>
+      </div>
+      <div className="flex items-center justify-end space-x-2">
+        <a
+          target="_blank"
+          href="https://github.com/thorwebdev/vercel-ai-chatbot"
+          rel="noopener noreferrer"
+          className={cn(buttonVariants({ variant: 'outline' }))}
+        >
+          <IconGitHub />
+          <span className="ml-2 hidden md:flex">GitHub</span>
+        </a>
+        <a
+          href="https://github.com/thorwebdev/vercel-ai-chatbot"
+          target="_blank"
+          className={cn(buttonVariants())}
+        >
+          <IconVercel className="mr-2" />
+          <span className="hidden sm:block">Deploy to Vercel</span>
+          <span className="sm:hidden">Deploy</span>
+        </a>
       </div>
     </header>
   )
