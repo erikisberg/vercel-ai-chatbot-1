@@ -1,5 +1,6 @@
 import type { NextApiRequest } from 'next'
 import type { NextFetchEvent, NextRequest } from 'next/server'
+import mixpanel from 'mixpanel';
 
 export const initAnalytics = ({
   request,
